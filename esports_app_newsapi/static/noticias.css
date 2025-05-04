@@ -1,0 +1,163 @@
+body {
+    background-color: #00070e;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    background-color: #00070e;
+    color: #fff;
+    padding: 20px;
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.news-card {
+    background-color: #192734;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.news-card h2 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.news-card p {
+    color: #ccc;
+}
+
+a {
+    color: #1DA1F2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo do menu lateral */
+.menu-sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 280px;
+    height: 100%;
+    background-color: #08507c; /* faixa azul */
+    padding: 20px;
+    padding-top: 40px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.4);
+    transition: left 0.3s ease;
+    z-index: 5;
+    color: white;
+}
+.menu-sidebar p{
+    margin-right: 40px;
+    margin-bottom: 10px;
+}
+.menu-sidebar h3 {
+    margin-top: 0;
+    font-size: xx-large;
+    margin-top: 20px;
+}
+
+.menu-sidebar a {
+    color: rgb(255, 255, 255);
+    background-color: #053655;
+    display: block;
+    width: 50%;
+    padding: 7px;
+    padding-left: 20%;
+    padding-right: 20%px;
+    border: 1px solid #555;
+    border-radius: 10px;
+    border-color: #ffffff;
+    margin-top: 7%;
+}
+
+/* Ícone do menu */
+.menu-icon {
+    height: 5px;
+    font-size: 26px;
+    cursor: pointer;
+    position: fixed;
+    top: 5px;
+    left: 8px;
+    z-index: 20;
+    color: white;
+    background-color: #08507c;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* Mostrar menu */
+.menu-open .menu-sidebar {
+    left: 0;
+}
+/* Estilo para a barra de busca */
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-input {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #38444D;
+    background-color: #192734;
+    color: #E1E8ED;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 8px 14px;
+    background-color: #188ad1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.search-button:hover {
+    background-color: #0a79be;
+}
+.header {
+    margin-left: 41%;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #00070e;
+    color: #E1E8ED;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 10%;
+}
+
+.header-title h1 {
+    font-size: 40px;
+    margin: 0;
+
+}
+

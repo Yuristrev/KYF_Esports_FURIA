@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro de Fã de Esports</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cadastro.css') }}">
+    <script>
+        function toggleCheckbox(element) {
+            element.classList.toggle('active');
+            const input = element.querySelector('input[type=checkbox]');
+            input.checked = !input.checked;
+        }
+    </script>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Cadastro de Fã</h1>
+        <form method="post">
+            <label>Nome:</label>
+            <input type="text" name="nome" required>
+
+            <label>CPF:</label>
+            <input type="text" name="cpf" placeholder="000.000.000-00" required>
+
+            <label>Endereço:</label>
+            <input type="text" name="endereco" required>
+
+            <label>Interesses:</label>
+            <div class="checkbox-group">
+                {% for interesse in ['League of Legends', 'Counter-Strike', 'Valorant', 'FIFA', 'Free Fire', 'Overwatch', 'Rocket League', 'Dota 2', 'PUBG', 'Fortnite', 'Rainbow Six', 'Apex Legends'] %}
+                    <div class="checkbox-btn" onclick="toggleCheckbox(this)">
+                        <input type="checkbox" name="interesses" value="{{ interesse }}">
+                        {{ interesse }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <label>Atividades no último ano:</label>
+            <textarea name="atividades"></textarea>
+
+            <label>Eventos que participou:</label>
+            <textarea name="eventos"></textarea>
+
+            <label>Compras relacionadas:</label>
+            <textarea name="compras"></textarea>
+
+            <input type="submit" value="Cadastrar">
+        </form>
+        <p>{{ mensagem }}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meu Perfil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cadastro.css') }}">
+</head>
+<body>
+<div class="form-container">
+    <h1>Meu Perfil</h1>
+    <form method="post" action="/perfil">
+        <label>Nome:</label>
+        <input type="text" name="nome" value="{{ usuario['nome'] }}" required>
+
+        <label>CPF:</label>
+        <input type="text" name="cpf" value="{{ usuario['cpf'] }}" required>
+
+        <label>Endereço:</label>
+        <input type="text" name="endereco" value="{{ usuario['endereco'] }}" required>
+
+        <label>Interesses:</label>
+        <div class="checkbox-group">
+            {% for interesse in ['League of Legends', 'Counter-Strike', 'Valorant', 'FIFA', 'Free Fire', 'Overwatch', 'Rocket League', 'Dota 2', 'PUBG', 'Fortnite', 'Rainbow Six', 'Apex Legends'] %}
+                <div class="checkbox-btn {% if interesse in usuario['interesses'] %}active{% endif %}" onclick="toggleCheckbox(this)">
+                    <input type="checkbox" name="interesses" value="{{ interesse }}" {% if interesse in usuario['interesses'] %}checked{% endif %}>
+                    {{ interesse }}
+                </div>
+            {% endfor %}
+        </div>
+
+        <label>Atividades no último ano:</label>
+        <textarea name="atividades">{{ usuario['atividades'] }}</textarea>
+
+        <label>Eventos que participou:</label>
+        <textarea name="eventos">{{ usuario['eventos'] }}</textarea>
+
+        <label>Compras relacionadas:</label>
+        <textarea name="compras">{{ usuario['compras'] }}</textarea>
+
+        <input type="submit" value="Salvar Alterações">
+    </form>
+</div>
+
+<script>
+    function toggleCheckbox(element) {
+        element.classList.toggle('active');
+        const input = element.querySelector('input[type=checkbox]');
+        input.checked = !input.checked;
+    }
+</script>
+</body>
+</html>

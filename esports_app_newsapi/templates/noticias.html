@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Black Esports</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='noticias.css') }}">
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            const currentLeft = window.getComputedStyle(menu).left;
+            if (currentLeft === "0px") {
+                menu.style.left = "-260px";
+            } else {
+                menu.style.left = "0px";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="header-title">
+            <span class="menu-icon" onclick="toggleMenu()">☰</span>
+            <h1>Black Esports</h1>
+        </div>
+        <form method="get" action="{{ url_for('noticias') }}" class="search-form">
+            <input type="text" name="q" placeholder="Pesquisar notícias..." value="{{ query }}" class="search-input">
+            <button type="submit" class="search-button">🔍</button>
+        </form>
+    </div>
+    
+    <!-- Menu lateral começa oculto -->
+    <div id="menu" class="menu-sidebar" style="left: -260px;">
+        <h3>Meu Perfil</h3>
+        <p><strong>Nome:</strong> {{ usuario['nome'] }}</p>
+        <p><strong>CPF:</strong> {{ usuario['cpf'] }}</p>
+        <p><strong>Endereço:</strong> {{ usuario['endereco'] }}</p>
+        <p><strong>Interesses:</strong> {{ usuario['interesses'] | join(', ') }}</p>
+        <a href="{{ url_for('perfil') }}">Editar Perfil</a>
+    </div>
+
+    <div class="news-container">
+        {% for noticia in noticias %}
+            <div class="news-card">
+                {% if noticia['image'] %}
+                    <img src="{{ noticia['image'] }}" alt="Imagem da notícia" style="max-width: 100%; border-radius: 6px; margin-bottom: 10px;">
+                {% endif %}
+                <h3>{{ noticia['title'] }}</h3>
+                <p>{{ noticia['description'] }}</p>
+                <a href="{{ noticia['url'] }}" target="_blank">Leia mais</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
