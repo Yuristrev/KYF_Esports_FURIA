@@ -27,3 +27,6 @@ Como rodar localmente
    ```bash
    git clone https://github.com/seu-usuario/esports-news-app.git
    cd esports-news-app
+
+   depois use o comando no terminal:
+   python app.py

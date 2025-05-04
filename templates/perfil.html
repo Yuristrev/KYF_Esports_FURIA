@@ -27,9 +27,6 @@
             {% endfor %}
         </div>
 
-        <label>Atividades no último ano:</label>
-        <textarea name="atividades">{{ usuario['atividades'] }}</textarea>
-
         <label>Eventos que participou:</label>
         <textarea name="eventos">{{ usuario['eventos'] }}</textarea>
 
@@ -38,7 +35,11 @@
 
         <input type="submit" value="Salvar Alterações">
     </form>
+    {% if mensagem %}
+        <p style="color: red;">{{ mensagem }}</p>
+    {% endif %}
 </div>
+
 
 <script>
     function toggleCheckbox(element) {

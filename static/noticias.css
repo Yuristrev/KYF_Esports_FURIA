@@ -50,7 +50,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Estilo do menu lateral */
 .menu-sidebar {
     position: fixed;
     top: 0;
@@ -89,7 +88,6 @@ a:hover {
     margin-top: 7%;
 }
 
-/* Ícone do menu */
 .menu-icon {
     height: 5px;
     font-size: 26px;
@@ -104,11 +102,10 @@ a:hover {
     border-radius: 5px;
 }
 
-/* Mostrar menu */
 .menu-open .menu-sidebar {
     left: 0;
 }
-/* Estilo para a barra de busca */
+
 .search-form {
     display: flex;
     align-items: center;
